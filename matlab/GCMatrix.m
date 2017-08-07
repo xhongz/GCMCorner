@@ -1,4 +1,4 @@
-function R = GCMatrix(x,y,W)
+function R = GCMatrix(x,y)
 
 k = 0.001;
 

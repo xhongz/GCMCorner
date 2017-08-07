@@ -11,18 +11,11 @@ if nargin == 0
     s = 1;  % have strong influence to house image ***  house:1,  j: 5,  
     H = 0.25;  % house: 0.1
     I = imread('lab.gif');
-%  I = imread('astroid.bmp');
-%     I = (I==1).*255;
-    
-%   
+  
     I = im2double(I);
-%     I = imnoise(I,'Gaussian',0,0.1);  
-%     figure,imshow(I);
-%     I = imresize(I,0.5);
-%     I = imrotate(I,90);
+
 end
 
-% I = imnoise(I, 'gaussian', 0.02);
 
 Gap_size =1;
 L = 0;
@@ -46,7 +39,7 @@ for j = 1:size(curve, 2)
     [W, b] = Guassian(sig);
     L=length(x);
     if L>W
-        % Calculate curvature
+        
         if curve_mode(j,:) == 'loop'
             x1=[x(L-W+1:L);x;x(1:W)];
             y1=[y(L-W+1:L);y;y(1:W)];
